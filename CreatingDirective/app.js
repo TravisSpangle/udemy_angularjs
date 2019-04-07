@@ -25,7 +25,14 @@ travisApp.controller('mainController', ['$scope', '$location', '$log', function 
 
   $scope.person = {
     name: 'Joe Doe',
-    address: '123 Street st, Seattle, WA 98109'
+    street: '123 Street st',
+    city: 'Seattle',
+    state: 'WA',
+    zip: '98109'
+  }
+
+  $scope.formattedAddress = function(person) {
+    return person.street + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
   }
 
 }]);
@@ -43,7 +50,8 @@ travisApp.directive("searchResult", function(){
     templateUrl: 'directives/searchresult.html',  
     replace: true,
     scope: {
-      personObject:"="
+      personObject:"=",
+      formattedAddressFunction: "&"
     }
   }
 });
