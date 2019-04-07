@@ -43,8 +43,7 @@ travisApp.directive("searchResult", function(){
     templateUrl: 'directives/searchresult.html',  
     replace: true,
     scope: {
-      personName: "@",
-      personAddress: "@"
+      personObject:"="
     }
   }
 });
