@@ -23,13 +23,29 @@ travisApp.config(function ($routeProvider) {
 
 travisApp.controller('mainController', ['$scope', '$location', '$log', function ($scope, $location, $log) {
 
-  $scope.person = {
-    name: 'Joe Doe',
-    street: '123 Street st',
-    city: 'Seattle',
-    state: 'WA',
-    zip: '98109'
-  }
+  $scope.people = [
+    {
+      name: 'Joe Doe',
+      street: '123 Street st',
+      city: 'Seattle',
+      state: 'WA',
+      zip: '98109'
+    },
+    {
+      name: 'John Doe',
+      street: '222 Street st',
+      city: 'Bothel',
+      state: 'WA',
+      zip: '98109'
+    },
+    {
+      name: 'Baz Puppy',
+      street: '123 Street st',
+      city: 'West Seattle',
+      state: 'WA',
+      zip: '98109'
+    }
+  ]
 
   $scope.formattedAddress = function(person) {
     return person.street + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
