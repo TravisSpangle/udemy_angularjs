@@ -68,6 +68,26 @@ travisApp.directive("searchResult", function(){
     scope: {
       personObject:"=",
       formattedAddressFunction: "&"
+    },
+    compile: function(elem, attrs) {
+      console.log('compiling ... ');
+      //elem.removeAttr('class');
+      console.log(elem);
+
+      return {
+	pre: function(scope, element, attrs) {
+	  console.log('Pre-linking');
+	  console.log(element);
+	},
+	post: function(scope, element, attrs) {
+	  console.log('Post-linking');
+	  console.log(element);
+
+	  if (scope.personObject.name == 'John Doe') {
+	    element.removeAttr('class');
+	  }
+	}
+      }
     }
   }
 });
