@@ -69,6 +69,7 @@ travisApp.directive("searchResult", function(){
       personObject:"=",
       formattedAddressFunction: "&"
     },
+    transclude: true,
     link: function(scope, elements, attrs) {
       console.log('Linking...');
       console.log(scope);
